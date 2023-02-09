@@ -30,8 +30,8 @@ public class ProductService {
         Product oldProduct = repository.findById(product.getId()).get();
 
         if (oldProduct != null) {
-            product.setMonthlyRevenue(product.getMonthlyRevenue() + oldProduct.getMonthlyRevenue());
-            product.setYearlyRevenue(product.getYearlyRevenue() + oldProduct.getYearlyRevenue());
+            product.setMonthlyRevenue(product.getMonthlyRevenue());
+            product.setYearlyRevenue(product.getYearlyRevenue());
         }
         repository.save(product);
     }

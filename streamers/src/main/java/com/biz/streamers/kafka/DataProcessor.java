@@ -36,7 +36,7 @@ public class DataProcessor {
             Product product = mapper.readValue(data, Product.class);
             Random random = new Random();
 		    product.setMonthlyRevenue(random.nextInt(100000) / 100.00); 
-		    product.setYearlyRevenue(product.getMonthlyRevenue() * 12.00);
+		    product.setYearlyRevenue(random.nextInt(100000) / 100.00);
 
             return mapper.writeValueAsString(product);
         } catch (JsonMappingException e) {
